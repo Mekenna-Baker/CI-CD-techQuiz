@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20.15.1'
 
 
       - name: Install dependencies
@@ -30,5 +30,7 @@ jobs:
 
 
         # Comment to test workflow
+
+        # 2nd workflow test
 
         
