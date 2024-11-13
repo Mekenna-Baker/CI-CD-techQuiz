@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.15.1'
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
@@ -25,7 +25,15 @@ jobs:
 
       - name: Install Cypress
         run: npx cypress install
-      
+
+      - name: Start server
+        run: npm run start &
+        env:
+          PORT: 3001
+
+      - name: Wait for server to be ready
+        run: npx wait-on http://localhost:3001
+
       - name: Run Cypress tests
         run: npm run test
 
