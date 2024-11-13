@@ -8,23 +8,24 @@ on:
 jobs:
   cypress-tests:
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Checkout code
         uses: actions/checkout@v3
-
-
+      
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.15.1'
 
-
       - name: Install dependencies
         run: npm install
 
+      - name: Make Cypress executable
+        run: chmod +x ./node_modules/.bin/cypress
 
+      - name: Verify Cypress installation
+        run: npx cypress verify
+      
       - name: Run Cypress tests
         run: npm run test
 
@@ -32,5 +33,7 @@ jobs:
         # Comment to test workflow
 
         # 2nd workflow test
+
+        # 3rd workflow test
 
         
