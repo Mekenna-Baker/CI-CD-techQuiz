@@ -23,8 +23,8 @@ jobs:
       - name: Make Cypress executable
         run: chmod +x ./node_modules/.bin/cypress
 
-      - name: Verify Cypress installation
-        run: npx cypress verify
+      - name: Install Cypress
+        run: npx cypress install
       
       - name: Run Cypress tests
         run: npm run test
@@ -35,5 +35,7 @@ jobs:
         # 2nd workflow test
 
         # 3rd workflow test
+
+        # 4th workflow test
 
         
